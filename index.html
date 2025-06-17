@@ -1,30 +1,60 @@
 <!DOCTYPE html>
 <html lang="uk">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ПОСВІДЧЕННЯ ВОДІЯ</title>
 
   <!-- TikTok Pixel Code Start -->
-  <!-- 1) Статически подгружаем библиотеку пикселя с вашим SDK-ID -->
-  <script
-    async
-    src="https://analytics.tiktok.com/i18n/pixel/events.js?sdkid=D0VCI6JC77U2P4BEC28G"
-  ></script>
-  <!-- 2) Вызываем page -->
   <script>
-    window.ttq = window.ttq || [];
-    ttq.push(['page']);
+    !function(w,d,t){
+      w.TiktokAnalyticsObject=t;
+      var ttq=w[t]=w[t]||[];
+      ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"];
+      ttq.setAndDefer=function(t,e){
+        t[e]=function(){
+          t.push([e].concat(Array.prototype.slice.call(arguments,0)));
+        };
+      };
+      for(var i=0;i<ttq.methods.length;i++){
+        ttq.setAndDefer(ttq, ttq.methods[i]);
+      }
+      ttq.instance=function(t){
+        var e=ttq._i[t]=[];
+        for(var n=0;n<ttq.methods.length;n++){
+          ttq.setAndDefer(e, ttq.methods[n]);
+        }
+        return e;
+      };
+      ttq.load=function(e,n){
+        var r="https://analytics.tiktok.com/i18n/pixel/events.js", o=n&&n.partner;
+        ttq._i=ttq._i||{};
+        ttq._i[e]=[];
+        ttq._i[e]._u=r;
+        ttq._t=ttq._t||{};
+        ttq._t[e]=+new Date;
+        ttq._o=ttq._o||{};
+        ttq._o[e]=n||{};
+        var s=d.createElement("script");
+        s.type="text/javascript";
+        s.async=true;
+        s.src=r+"?sdkid="+e+"&lib="+t;
+        var x=d.getElementsByTagName("script")[0];
+        x.parentNode.insertBefore(s, x);
+      };
+      ttq.load('D0VCI6JC77U2P4BEC28G');
+      ttq.page();
+    }(window, document, 'ttq');
   </script>
+  <noscript>
+    <img height="1" width="1" style="display:none"
+         src="https://analytics.tiktok.com/i18n/pixel/events.gif?sdkid=D0VCI6JC77U2P4BEC28G"
+         alt="TikTok pixel"/>
+  </noscript>
   <!-- TikTok Pixel Code End -->
 
   <style>
-    /* Сброс отступов и выбор шрифта */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin:0; padding:0; box-sizing:border-box; }
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
       background-image:
@@ -38,7 +68,7 @@
       min-height: 100vh;
     }
     .card {
-      background: #ffffff;
+      background: #fff;
       border-radius: 16px;
       padding: 2rem 1.5rem;
       box-shadow: 0 4px 12px rgba(0,0,0,0.1);
@@ -47,8 +77,7 @@
       width: 100%;
     }
     .avatar {
-      width: 100px;
-      height: 100px;
+      width: 100px; height: 100px;
       border-radius: 50%;
       object-fit: cover;
       margin: 0 auto 1rem;
@@ -87,30 +116,18 @@
   </style>
 </head>
 <body>
-
   <div class="card">
-    <!-- замените src на вашу аватарку -->
     <img class="avatar" src="avatar.jpg" alt="Фото профілю">
-
-    <!-- имя владельца -->
     <h1 class="name">Анатолій ТСЦ</h1>
-    <!-- Telegram-handle -->
     <p class="username">@Tolik_tsc</p>
-    <!-- описание на украинском -->
     <p class="description">
       Ваш час коштує більше. Допоможу з оформленням документів.
     </p>
-
-    <!-- единственная кнопка -->
-    <a
-      class="btn btn-primary"
-      href="https://t.me/Tolik_tsc"
-      target="_blank"
-      rel="noopener"
-    >
+    <a class="btn btn-primary"
+       href="https://t.me/Tolik_tsc"
+       target="_blank" rel="noopener">
       ОТРИМАТИ КОНСУЛЬТАЦІЮ
     </a>
   </div>
-
 </body>
 </html>
